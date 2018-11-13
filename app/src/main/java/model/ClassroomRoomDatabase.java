@@ -57,8 +57,10 @@ public abstract class ClassroomRoomDatabase extends RoomDatabase {
             List<Classroom> data = new ArrayList<>();
             Classroom firstClassroom = new Classroom(0,"DAMP",24,5,"Chema");
             data.add(firstClassroom);
-            Classroom secondClassroom = new Classroom(0,"DAMP2",21,5,"Jesus");
+            Classroom secondClassroom = new Classroom(0,"DAMP2",21,3,"Jesus");
             data.add(secondClassroom);
+            Classroom thirdClassroom = new Classroom(0,"Diseño",15,8,"Pedro");
+            data.add(thirdClassroom);
             mAsyncTaskDao.deleteAll();
             mAsyncTaskDao.insertAll(data);
             return null;
