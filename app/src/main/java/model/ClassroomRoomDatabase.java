@@ -19,9 +19,9 @@ import objects.Classroom;
 public abstract class ClassroomRoomDatabase extends RoomDatabase {
     public abstract ClassroomDao classroomDao();
 
-    private static ClassroomRoomDatabase INSTANCE;
+   public static ClassroomRoomDatabase INSTANCE;
 
-    static ClassroomRoomDatabase getDatabase(final Context context) {
+   public static ClassroomRoomDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (ClassroomRoomDatabase.class) {
                 if (INSTANCE == null) {
@@ -54,9 +54,11 @@ public abstract class ClassroomRoomDatabase extends RoomDatabase {
         }
         @Override
         protected Void doInBackground(Void... voids) {
-            Classroom classroom = new Classroom(0,"DAMP",24,5,"Chema");
             List<Classroom> data = new ArrayList<>();
-            data.add(classroom);
+            Classroom firstClassroom = new Classroom(0,"DAMP",24,5,"Chema");
+            data.add(firstClassroom);
+            Classroom secondClassroom = new Classroom(0,"DAMP2",21,5,"Jesus");
+            data.add(secondClassroom);
             mAsyncTaskDao.deleteAll();
             mAsyncTaskDao.insertAll(data);
             return null;
