@@ -14,6 +14,9 @@ public interface ClassroomDao {
     @Insert
     void insert(Classroom classroom);
 
+    @Insert
+    void insertAll(List<Classroom> list_classroom);
+
     @Query("DELETE FROM class_room_table")
     void deleteAll();
 
